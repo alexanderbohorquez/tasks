@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');  
+
+:root {
+    --color-principal: #ffffff7a;
+    --color-titulo: #10B981; 
+    --color-subtitulo: #065f46; 
+    --color-fondo-contador: #baf5b481; 
+    --color-boton-eliminar: #DBE6F3; 
+    --color-boton-editar: #DBE6F3; 
+    --color-icono-eliminar: #EB3223; 
+    --color-icono-editar: #5686E1; 
+}    
+
+html, body {
+    height: 100%; 
+    width: 100%; 
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 120px;
+}
+
+.card {
+    width: 389px;
+    height: 617px;
+    background-color: var(--color-principal); 
+    border-radius: 20px; 
+    box-shadow: 0 9px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #525252;
+}
+
+.tittle{
+    color: var(--color-titulo);
+}
+
+.subtittle{
+    color: var(--color-subtitulo);
+}
+
+.stats-container {
+    width: 370px;
+    height: 160px; 
+    background-color: var(--color-principal); 
+    border-radius: 20px;
+    border: 2px solid #525252; 
+    margin: 7.5px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2); 
+}
+
+#progressBar {
+    width: 206px;
+    height: 13px;
+    background-color: var(--color-principal);
+    border: 2px solid #525252;
+    border-radius: 20px;
+    margin-top: 10px;
+    position: relative; 
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2); 
+}
+
+#progress {
+    width: 0%;
+    height: 100%; 
+    background-color: var(--color-fondo-contador);
+    border-radius: 20px;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+    
+}
+
+
+#numbers{
+    width: 110px;
+    height: 110px;
+    background-color: var(--color-fondo-contador);
+    border: 2px solid #525252;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 36px;
+    font-weight: 600;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2); 
+}
+
+form {
+    display: flex;
+    align-items: center; /* Centra el input y el botón verticalmente */
+    justify-content: center;
+    margin-top: 15px; /* Puedes ajustar el margen superior del formulario */
+}
+
+input {
+    width: 320px;
+    height: 40px;
+    margin-right: 10px; /* Espacio entre el input y el botón */
+    border: 2px solid #525252;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
+    font-family: 'Fredoka', sans-serif;
+    font-size: 18px;
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #525252;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--color-fondo-contador);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra el icono dentro del botón */
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.1s ease; /* Transición suave para el zoom */
+}
+
+button:active {
+    transform: scale(1.1); /* Aumenta el tamaño del botón un 10% al hacer clic */
+}
+
+button i {
+    font-size: 24px; /* Tamaño del icono */
+    color: #10B981;
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column; /* Asegúrate de que las tareas se apilen verticalmente */
+    width: 369px; /* El ancho deseado para la lista */
+    margin-top: 10px; /* Margen superior */
+    height: 54px;
+    margin-left: 3px;
+    list-style: none; /* Elimina el estilo de lista */
+    
+}
+
+.taskItem {
+    display: flex;
+    margin: 5px;
+    border-radius: 20px;
+    justify-content: space-between;
+    border: 2px solid #525252; /* Borde de la tarea */
+    background-color: var(--color-principal); /* Color de fondo de la tarea */
+    width: 100%; /* Asegúrate de que ocupe el ancho completo del contenedor */
+    height: 54px; /* Altura deseada */
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2); 
+}
+
+.task {
+    display: flex;
+    align-items: center;
+}
+
+.task input[type="checkbox"] {
+    margin-left: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Hace el checkbox redondo */
+    appearance: none; /* Elimina el estilo predeterminado del checkbox */
+    border: 2px solid #525252; /* Bordes del checkbox */
+    outline: none; /* Elimina el contorno predeterminado */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el checkbox */
+    transition: background-color 0.2s ease; /* Transición suave para el cambio de color */
+}
+
+.task input[type="checkbox"]:checked {
+    background-color: var(--color-fondo-contador); /* Color verde cuando se hace clic */
+    border: 2px solid #525252; /* Puedes hacer el borde verde también */
+}
+
+.icons {
+    margin-top: 9px;
+    margin-right: 11px;
+    display: flex;           /* Asegura que los elementos se alineen en una fila */
+    gap: 4px;              /* Espaciado entre los iconos, ajusta según necesites */
+}
+
+
+
+.taskItem img {
+    width: 20px;          /* Tamaño de la imagen */
+    height: 20px;         /* Tamaño de la imagen */
+    cursor: pointer;      /* Cambia el cursor al pasar sobre la imagen */
+}
+
+.taskItem .icon-container {
+    width: 30px;          /* Ancho del borde */
+    height: 30px;         /* Alto del borde */
+    border: 2px solid #525252; /* Borde de la tarea */
+    border-radius: 50%;   /* Esquinas redondeadas */
+    display: flex;        /* Para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;  /* Centra verticalmente */
+}
+
+
