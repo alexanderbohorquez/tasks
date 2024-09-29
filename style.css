@@ -35,7 +35,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 120px;
+    padding-top: 80px;
 }
 
 .card {
@@ -220,3 +220,25 @@ button i {
 }
 
 
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+    }
+
+
+    .stats-container,
+    #task-list {
+        width: 96%; 
+
+        gap: 0%;/* Asegúrate de que se ajuste al contenedor */
+    }
+
+    input {
+        width: 80%; /* Aumenta el tamaño del input en móviles */
+    }
+
+    button {
+        width: 40px; /* Mantén el tamaño del botón */
+        height: 40px; /* Mantén el tamaño del botón */
+    }
+}
